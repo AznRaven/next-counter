@@ -18,6 +18,7 @@ model Category {
 
 model Counter {
   id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  name       String
   countValue Int       @default(0)
   category   Category? @relation(fields: [categoryId], references: [id])
   categoryId String    @db.ObjectId
